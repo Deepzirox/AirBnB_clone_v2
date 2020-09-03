@@ -24,5 +24,17 @@ def c_route(text):
     ''' C route '''
     return "C " + text.replace("_", " ")
 
+
+@app.route("/python/<text>", strict_slashes=False)
+def python_route(text):
+    ''' Python Route '''
+    return "Python " + text.replace("_", " ")
+
+
+@app.route("/python", strict_slashes=False)
+def python_route2():
+    ''' Python Route '''
+    return "Python is cool"
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
